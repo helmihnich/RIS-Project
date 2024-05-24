@@ -103,7 +103,7 @@ const Dashboard = () => {
         </Grid>
         <Grid item xs={6} sm={6} md={6} sx={{ textAlign: 'center', mb: 3 }}>
           <Card sx={{ borderRadius: '16px', p: 2, boxShadow: 3 }}>
-            <Typography variant="body1">Chart of appointment's number</Typography>
+            <Typography variant="body1">Chart of appointments number</Typography>
             <Box sx={{ mt: 1, height: '150px' }}>
               {/* Add your chart component here */}
             </Box>

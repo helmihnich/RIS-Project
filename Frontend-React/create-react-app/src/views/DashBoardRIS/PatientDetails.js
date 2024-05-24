@@ -16,9 +16,9 @@ const PatientDetails = () => {
   const navigate = useNavigate();
 
   // Function to handle row click
-  const handleRowClick = (id,type, date) => {
+  const handleRowClick = (id) => {
     // Redirect to details page with row id as parameter
-    navigate(`/patient-details/${patientName}/diagnostic/${id}/${type}/${date}`);
+    navigate(`/patient-details/${patientName}/diagnostic/${id}`);
   };
 
   return (
