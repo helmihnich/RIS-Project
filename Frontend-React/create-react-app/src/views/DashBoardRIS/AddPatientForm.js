@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Card, Grid, TextField, Button, Dialog, DialogTitle, DialogContent, MenuItem, Select, FormControl, InputLabel, IconButton, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Box, Grid, TextField, Button, Dialog, DialogTitle, DialogContent, MenuItem, Select, FormControl, InputLabel, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import DeleteIcon from '@mui/icons-material/Delete';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import SearchIcon from '@mui/icons-material/Search';
-import { useNavigate } from 'react-router-dom';
 
 const AddPatientForm = ({ open, onClose }) => {
   const [formData, setFormData] = useState({
@@ -31,10 +27,10 @@ const AddPatientForm = ({ open, onClose }) => {
   };
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth={false} PaperProps={{ style: { width: '40%' } }}>
+    <Dialog open={open} onClose={onClose} maxWidth={false} PaperProps={{ style: { width: '40%' } }}>      
       <DialogTitle>
         <Box display="flex" justifyContent="center" alignItems="center">
-          <Typography variant="h4">New Patient</Typography>
+          <Typography variant="h2">New Patient</Typography>
           <IconButton onClick={onClose} style={{ position: 'absolute', right: 8, top: 8 }}>
             <CloseIcon />
           </IconButton>
@@ -163,119 +159,4 @@ const AddPatientForm = ({ open, onClose }) => {
   );
 };
 
-const PatientsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const patients = [
-    { name: 'Helmi Hnich', date: '25/05/2024' },
-    { name: 'Firas Hajlaoui', date: '29/05/2024' },
-    { name: 'Khaled Kbeili', date: '02/06/2024' },
-  ];
-
-  const filteredPatients = patients.filter((patient) =>
-    patient.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleView = (patientName) => {
-    navigate(`/patient-details/${patientName}`);
-  };
-
-  const handleDelete = (patientName) => {
-    // Add logic to delete patient here
-    console.log(`Deleted ${patientName}`);
-  };
-
-  const handleAddPatientOpen = () => {
-    setOpen(true);
-  };
-
-  const handleAddPatientClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <Box>
-      <Box display="flex" alignItems="center" mb={2}>
-        <Typography  color="black"style={{ fontSize:'25px' }}>
-          Dashboard /
-        </Typography>
-        <Typography  color="#7200A8" style={{ marginLeft: '8px', fontSize:'25px' }}>
-          My patients
-        </Typography>
-      </Box>
-      <Box display="flex" alignItems="center" mb={2}>
-        <TextField
-          placeholder="Search for a patient"
-          value={searchTerm}
-          onChange={handleSearch}
-          InputProps={{
-            startAdornment: (
-              <SearchIcon style={{ marginRight: '8px' }} />
-            )
-          }}
-          style={{ flexGrow: 1, marginRight: '16px', marginLeft: '700px', }}
-        />
-        <Button
-          variant="outlined"
-          onClick={handleAddPatientOpen}
-          style={{
-            color: '#5152BC',
-            borderColor: '#5152BC',
-            borderRadius: '20px',
-            textTransform: 'none',
-            height: '50px',
-            width: '150px',
-            marginRight: '80px',
-          }}
-        >
-          Add patient
-        </Button>
-        
-      </Box>
-      <Box>
-          <Typography  color="#5152BC" style={{ marginLeft: '8px', fontSize:'20px', marginBottom:"20px" }}>
-           Patients List
-          </Typography>
-        </Box>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead style={{ backgroundColor: '#f5f5f5' }}>
-            <TableRow>
-              <TableCell>Name & Family name of patient</TableCell>
-              <TableCell>Appointment</TableCell>
-              <TableCell>Details</TableCell>
-              <TableCell>Action</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {filteredPatients.map((patient, index) => (
-              <TableRow key={index}>
-                <TableCell>{patient.name}</TableCell>
-                <TableCell>{patient.date}</TableCell>
-                <TableCell>
-                  <IconButton onClick={() => handleView(patient.name)}>
-                    <VisibilityIcon />
-                  </IconButton>
-                </TableCell>
-                <TableCell>
-                  <IconButton onClick={() => handleDelete(patient.name)}>
-                    <DeleteIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <AddPatientForm open={open} onClose={handleAddPatientClose} />
-    </Box>
-  );
-};
-
-export default PatientsPage;
+export default AddPatientForm;
