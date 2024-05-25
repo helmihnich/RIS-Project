@@ -73,4 +73,4 @@ class ImageRadiologiqueSerializer(serializers.ModelSerializer):
             "examen_radiologique",
             "chemin_acces_image",
             "date_heure_creation",
-        ]
+
