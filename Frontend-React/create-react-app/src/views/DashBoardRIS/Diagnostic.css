@@ -30,3 +30,36 @@
     font-weight: 400;
     color: #5152BC;
   }
+
+  .details{
+    display: flex;
+  }
+
+  /* Diagnostic.css */
+
+.breadcrumb-line {
+  border: 0;
+  height: 2px;
+  background: #D0D0D0; /* You can change the color as needed */
+  margin: 10px 0; /* Adjust the spacing as needed */
+
+}
+
+.diagnosis{
+  background-color: white;
+  height: 100%;
+  margin-left: 70px;
+  border: 2px solid #D0D0D0;
+}
+
+.diagnosis p{
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 400;
+}
+.diagnosis span{
+  margin-top: 10px;
+  color: black;
+  font-weight: 400;
+  text-align: left;
+}

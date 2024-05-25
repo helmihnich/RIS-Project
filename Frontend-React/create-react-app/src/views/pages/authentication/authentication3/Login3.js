@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     // Add login logic here
-
+    
     // Navigate to the dashboard upon successful login
     navigate('dashboard');
   };
@@ -62,9 +62,9 @@ const Login = () => {
             <div className="login-comment mt-5 d-flex flex-column align-items-center">
               <p className="fs-5 mb-3">Or Sign in with other platforms</p>
               <div className="social-icons">
-                <a href="https://facebook.com"><img src={facebookIcon} alt="Facebook" className="social-icon" /></a>
-                <a href="https://linkedin.com"><img src={linkedinIcon} alt="LinkedIn" className="social-icon" /></a>
-                <a href="https://instagram.com"><img src={instagramIcon} alt="Instagram" className="social-icon" /></a>
+                <a href=""><img src={facebookIcon} alt="Facebook" className="social-icon" /></a>
+                <a href=""><img src={linkedinIcon} alt="LinkedIn" className="social-icon" /></a>
+                <a href=""><img src={instagramIcon} alt="Instagram" className="social-icon" /></a>
               </div>
             </div>
           </div>
