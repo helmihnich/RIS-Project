@@ -1,0 +1,58 @@
+.demo-app {
+  height: 100vh; /* Set height to 100% of viewport height */
+}
+
+.demo-app-sidebar {
+  width: 250px; /* Set a fixed width for the sidebar */
+  height: 100%; /* Make the sidebar height 100% */
+  overflow-y: auto; /* Enable vertical scroll if content exceeds height */
+}
+
+.demo-app-main {
+  flex: 1; /* Allow the main content to fill remaining space */
+  height: 100%; /* Make the main content height 100% */
+}
+
+/* Optionally, you can adjust FullCalendar height */
+.fc {
+  height: 100%; /* Make FullCalendar height 100% */
+}
+
+
+.fc .fc-toolbar-title {
+  color: #3f51b5; /* Title color matching the provided image */
+}
+
+.fc .fc-button {
+  background-color: #3f51b5; /* Primary button color */
+  border: none;
+  color: #ffffff; /* Button text color */
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fc .fc-button:hover {
+  background-color: #334296; /* Darker shade for hover effect */
+}
+
+.fc .fc-button:active,
+.fc .fc-button:focus {
+  background-color: #283681; /* Even darker shade for active/focus state */
+  outline: none;
+}
+
+.fc .fc-button-primary {
+  background-color: #3f51b5;
+}
+
+.fc .fc-button-primary:hover {
+  background-color: #334296;
+}
+
+.fc .fc-button-primary:active,
+.fc .fc-button-primary:focus {
+  background-color: #283681;
+  outline: none;
+}
+

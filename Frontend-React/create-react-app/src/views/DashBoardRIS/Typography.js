@@ -26,7 +26,7 @@ const Dashboard = () => {
           <Card sx={{ display: 'flex', alignItems: 'center', borderRadius: '16px', p: 2, boxShadow: 3 }}>
             <Avatar
               alt="Helmi Hnich"
-              src="/path-to-avatar-image.jpg" // Replace with your image URL
+              src="./assets/doctor.jpg" // Replace with your image URL
               sx={{ width: 56, height: 56, mr: 2 }}
             />
             <CardContent>
